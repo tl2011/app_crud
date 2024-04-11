@@ -59,3 +59,14 @@ export const NaoConfirmaButton = styled.TouchableOpacity`
     display: inline-block;
     font-size: 16px;
     transition: 0.5s all ease-out;`
+
+export const ConverterButton = styled.TouchableOpacity`
+    border:2px solid #2A612C;
+    background-color: '#4caf50';
+    background: #4caf50;
+    padding:  15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: 0.5s all ease-out;`

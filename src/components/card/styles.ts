@@ -1,13 +1,14 @@
 import styled from 'styled-components/native';
+import Colors from '../../config/Colors';
 
 export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: #466F70;
+  background-color: ${Colors.blueDark};
   border-radius: 30px;
   border-bottom-right-radius: 4px;
-  border-left-color: #A0DFE0;
+  border-left-color: ${Colors.blueLight}; 
   padding: 20px;
   margin: 10px;
   `;
@@ -22,37 +23,37 @@ export const Container = styled.View`
   export const Nome = styled.Text`
     font-size: 18px;
     line-height: 18px;
-    color: #A0DFE0;
+    color: ${Colors.blueMedium}; 
     font-weight: bold;
     margin-bottom: 5px;
   `;
   
   export const Email = styled.Text`
-    color: #A0DFE0;
+    color: ${Colors.blueMedium}; 
     font-size: 13px;
   `;
   
   export const User = styled.Text`
-    color: #A0DFE0;
+    color: ${Colors.blueMedium}; 
     font-size: 13px;
   `;
   
   export const Password = styled.Text`
-    color: #A0DFE0;
+    color: ${Colors.blueMedium};
     font-size: 15px;
     font-weight: bold;
   `;
   
 export const viewLoading = styled.View`
-    color: #A0DFE0;
+    color: ${Colors.blue};
     font-size: 15px;
     font-weight: bold;
   `;
 
 export const Button = styled.TouchableOpacity`
-    border:2px solid #466F70;
-    background-color: '#466F70';
-    background: #466F70;
+    border:2px solid ${Colors.blueDark};
+    background-color: ${Colors.blueDark};
+    background: ${Colors.blueDark};
     padding:  10px;
     text-align: center;
     text-decoration: none;

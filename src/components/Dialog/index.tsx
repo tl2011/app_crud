@@ -17,8 +17,8 @@ export const ExcluirItemDialog: React.FC<ExcluirItemDialogProps> = ({ isVisible,
     <VStack  bg={'#FAFFF5'} p={7}>
       <Text fontSize={16}  bold>Deseja realmente excluir este item?</Text>
       <HStack  space={2} justifyContent="center">
-      <AlterarButton onPress={onCancel}>Cancelar</AlterarButton>
-      {/* <ConfirmaExcluirButton onPress={onConfirm}>Confirmar</ConfirmaExcluirButton> */}
+      <Button  rounded="md" shadow={3} h={100} w={150} bgColor={'#FCA53A'} onPress={onCancel}>Cancelar</Button> 
+      <Button  rounded="md" shadow={3} h={100} w={150} bgColor={'#FC3F3A'} onPress={onConfirm}>Confirmar</Button>
              
       </HStack>
 

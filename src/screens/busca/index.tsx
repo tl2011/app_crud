@@ -1,21 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-  ActivityIndicator,
-  Alert,
-  Keyboard,
-} from 'react-native';
-
-
+import { Text,  View,  TextInput,  TouchableOpacity,
+  ActivityIndicator,  Alert,  Keyboard} from 'react-native';
 import Colors from '../../config/Colors';
 import api from '../../components/services/api';
-import { styles } from './styles';
-
+import { Container, AreaMoeda, TextMoeda, AreaValor, Input, BtnArea, BtnText, AreaResultado, ValorConvertido, ViewLoading  } from './styles'
 import Picker from '../../components/Picker/indext';
+import { ConverterButton } from '../../components/button/Button';
 
 const App = () => {
   const [moedas, setMoedas] = useState([]);
@@ -69,50 +59,47 @@ const App = () => {
 
   if (loading) {
     return (
-      <View style={styles.viewLoading}>
+      <ViewLoading>
         <ActivityIndicator color={Colors.white} size={45} />
-      </View>
+      </ViewLoading>
     );
   } else {
     return (
-      <View style={styles.container}>
-        <View style={styles.areaMoeda}>
-          <Text style={styles.textMoeda}>Selecione sua moeda</Text>
-          <Picker
-            moedas={moedas}
-            onChange={(moeda) => setMoedaSelecionada(moeda)}
-          />
-        </View>
+      <Container>
+      <AreaMoeda>
+        <TextMoeda>Selecione sua moeda</TextMoeda>
+        <Picker
+          moedas={moedas}
+          onChange={(moeda) => setMoedaSelecionada(moeda)}
+        />
+      </AreaMoeda>
 
-        <View style={styles.areaValor}>
-          <Text style={styles.textMoeda}>
-            Digite um valor para converter em (R$)
-          </Text>
-          <TextInput
+      <AreaValor style={{ marginBottom: 30 }}>
+          <TextMoeda>Digite um valor para converter em (R$)</TextMoeda>
+          <Input
             placeholder="EX:. 150"
-            style={styles.input}
             keyboardType="numeric"
-            onChangeText={(valor: any) => {
+            onChangeText={(valor) => {
               setValorMoeda(valor);
             }}
           />
-        </View>
-        <TouchableOpacity style={styles.btnArea} onPress={converter}>
-          <Text style={styles.btnText}>Converter</Text>
-        </TouchableOpacity>
+        </AreaValor>
+          <ConverterButton onPress={converter}>
+          <BtnText>Converter</BtnText>
+        </ConverterButton>
 
         {valorConvertido !== 0 && (
-          <View style={styles.areaResultado}>
-            <Text style={styles.valorConvertido}>
+          <AreaResultado>
+            <ValorConvertido>
               {valorMoeda} {moedaSelecionada}
-            </Text>
-            <Text style={[styles.valorConvertido, {fontSize: 18, margin: 10}]}>
+            </ValorConvertido>
+            <ValorConvertido style={{ fontSize: 18, margin: 10 }}>
               Corresponde a
-            </Text>
-            <Text style={styles.valorConvertido}>R$ {valorConvertido}</Text>
-          </View>
+            </ValorConvertido>
+            <ValorConvertido>R$ {valorConvertido}</ValorConvertido>
+          </AreaResultado>
         )}
-      </View>
+      </Container>
     );
   }
 };
