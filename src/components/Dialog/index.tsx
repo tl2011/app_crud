@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, HStack, Text, VStack } from 'native-base';
-import { ConfirmaExcluirButton, NaoConfirmaButton } from '../button/Button';
+import { AlterarButton, ConfirmaExcluirButton, NaoConfirmaButton } from '../button/Button';
 import { View } from 'react-native';
 
 
@@ -17,13 +17,9 @@ export const ExcluirItemDialog: React.FC<ExcluirItemDialogProps> = ({ isVisible,
     <VStack  bg={'#FAFFF5'} p={7}>
       <Text fontSize={16}  bold>Deseja realmente excluir este item?</Text>
       <HStack  space={2} justifyContent="center">
-        <View>
-        <NaoConfirmaButton onPress={onCancel}>Cancelar</NaoConfirmaButton>
-        <ConfirmaExcluirButton onPress={onConfirm}>Confirmar</ConfirmaExcluirButton>
-        </View>
-
-
-
+      <AlterarButton onPress={onCancel}>Cancelar</AlterarButton>
+      {/* <ConfirmaExcluirButton onPress={onConfirm}>Confirmar</ConfirmaExcluirButton> */}
+             
       </HStack>
 
     </VStack>

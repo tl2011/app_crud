@@ -5,6 +5,7 @@ const Colors = {
     red: '#FB4B57',
     white: '#FFF',
     blue: "#3235EB",
+    blueLight: '#E8F0F1',
   };
   
   export default Colors;
