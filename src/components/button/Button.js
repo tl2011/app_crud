@@ -17,7 +17,7 @@ font-size: 18px;
 `;
  
 export const AlterarButton = styled.TouchableOpacity`
-    border:2px solid #B6773D;
+    border:2px solid #7C420C;
     background-color: '#F89625';
     background: #F89625;
     padding:  15px 32px;

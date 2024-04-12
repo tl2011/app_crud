@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import Colors from '../../config/Colors';
 import styled from 'styled-components/native';
 
@@ -79,4 +78,5 @@ export const ViewLoading = styled.View`
   align-items: center;
   justify-content: center;
   flex: 1;
+  color: ${Colors.blueDark};
 `;
