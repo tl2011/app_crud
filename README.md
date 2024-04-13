@@ -27,3 +27,7 @@ cd app_crud
 ## Acesse pelo Expo Go no celular:
 
 Escaneie o QRCode utilizando o Expo Go no Android ou iOS
+
+## Cotação de Moedas
+
+É uma das funcionalidades do app, que consome a API (https://docs.awesomeapi.com.br/api-de-moedas)
