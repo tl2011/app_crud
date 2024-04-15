@@ -1,10 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Colors from '../../config/Colors';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { TextInput, View, TouchableOpacity, FlatList, SafeAreaView } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { styles } from './styles';
 import { Card, CardProps } from '../../components/card';
+import { useFocusEffect } from "@react-navigation/native";
 
 interface CardItem {
   id: string;
@@ -23,6 +24,10 @@ export const Home = ({ navigation }: Props) => {
     handleFetchData();
   }, []);
 
+  useFocusEffect (useCallback(() => {
+    handleFetchData(); //função responsavel por carregar os dados.
+},[]))
+
   useEffect(() => {
     if (searchText === '') {
       handleFetchData();
@@ -37,6 +42,7 @@ export const Home = ({ navigation }: Props) => {
       const jsonValue = await AsyncStorage.getItem('@fromHook:cadastro');
       const data = jsonValue ? JSON.parse(jsonValue) : [];
       setData(data);
+      return jsonValue
     } catch (e) {
       console.log(e);
     }
